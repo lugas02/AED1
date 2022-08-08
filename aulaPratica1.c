@@ -23,7 +23,7 @@ int main() {
     if ( sexo == 'h' ) {
         pesoIdeal = ( 72.7 * h ) - 58;
     } else {
-        ( sexo == 'm' ) {
+    if ( sexo == 'm' ) {
         pesoIdeal = ( 62.1 * h ) - 44.7;
         }
     }

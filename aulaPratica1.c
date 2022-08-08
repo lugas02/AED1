@@ -1,6 +1,3 @@
-// Lucas Costa Garcia
-// 2022/1 - 22000297 - M1 - ALGORITMOS E ESTRUTURAS DE DADOS I
-
 // Lista 02 - Comandos Condicionais
 // 10. Faça um programa que receba a altura e o sexo de uma pessoa, calcule e mostre seu
 // peso ideal, utilizando as seguintes fórmulas (onde h corresponde à altura):

@@ -1,4 +1,4 @@
-//Lista C09 - Exercício 4
+//Lista C09 - Exercício 6
 
 #include <stdio.h>
 #include <stdlib.h>

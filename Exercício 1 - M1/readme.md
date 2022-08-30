@@ -10,4 +10,5 @@ todos os números do buffer, primeiro toda a série em sequência depois novamen
 ints seguido dos floats e doubles.
 
 Regras de código: https://fabiensanglard.net/fd_proxy/doom3/CodeStyleConventions.pdf
+
 Link para o vídeo: https://drive.google.com/file/d/18a9KJjkGjVYsGFtyakUsrc5O06Clponu/view?usp=sharing

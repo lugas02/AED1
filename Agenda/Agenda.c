@@ -13,7 +13,8 @@ Continuar a sua implementação da agenda (exercício 3) semana 1 dentro dos mes
 Para corrigir:
     1. Buffer overflow (scanf);
     2. Warnings (Type-casting);
-    3. Checar se há memória quando aloca memória.
+    3. Checar se há memória quando aloca memória;
+    4. pLast no pList.
 */
 
 #include <stdio.h>
@@ -34,6 +35,8 @@ void *Push() {
     void *newNode;
 
     newNode = (void *) malloc( (sizeof(char) * 11) + (sizeof(int) * 2) + (sizeof(void *) * 2) );
+    if ( newNode == NULL )
+        return newNode;
 
     printf("Digite o nome: ");
     scanf("%s", (char *)newNode);
@@ -61,11 +64,11 @@ void InsertList() {
     void *newNode = Push();
 
     if ( !pList ) {    // Chega se a lista está vazia.
-        pList = (int *)newNode;
+        pList = newNode;
         return;
     }
 
-    *(int *)pBuffer = (int *)pList;    // pBuffer recebe o endereço de memória do primeiro nodo.
+    *(int *)pBuffer = (void *)pList;    // pBuffer recebe o endereço de memória do primeiro nodo.
 
     while ( *(int *)pBuffer && (strcmp(*(int *)pBuffer, (char *)newNode) < 1) ) {    // Checa se o endereço de memória contido em pBuffer é nulo e se a string do nodo atual é menor que a string do novo nodo.
         *(int *)( newNode + (sizeof(char) * 11) + (sizeof(int) * 2) ) = *(int *)pBuffer;    // pPrev do novo nodo guarda o endereço de memória do nodo atual.
@@ -111,7 +114,7 @@ void Pop() {
         return;
     }
 
-    *(int *)pBuffer = (int *)pList;
+    *(int *)pBuffer = (void *)pList;
     
     if ( *(int *)( *(int *)pBuffer + (sizeof(char) * 11) + (sizeof(int) * 2) + (sizeof(void *)) ) == NULL ) {
         free(pList);
@@ -165,7 +168,7 @@ void Search() {
     printf("Digite um nome para procurar: ");
     scanf("%s", (char *)( pBuffer + sizeof(void *) + sizeof(char) ));
 
-    *(int *)pBuffer = (int *)pList;
+    *(int *)pBuffer = (void *)pList;
 
     while ( *(int *)pBuffer && strcmp(pBuffer + sizeof(void *) + sizeof(char), *(int *)pBuffer) != 0 ) {
         *(int *)pBuffer = *(int *)( *(int *)pBuffer + (sizeof(char) * 11) + (sizeof(int) * 2) + sizeof(void *) );
@@ -196,7 +199,7 @@ void PrintAll() {
         return;
     }
 
-    *(int *)pBuffer = (int *)pList;
+    *(int *)pBuffer = (void *)pList;
 
     printf("//---------------------------------//");
     while ( *(int *)pBuffer ) {

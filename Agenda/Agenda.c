@@ -13,7 +13,7 @@ Continuar a sua implementação da agenda (exercício 3) semana 1 dentro dos mes
 Para corrigir:
     1. Buffer overflow (scanf);
     2. Warnings (Type-casting);
-    3. Checar se há memória quando aloca memória;
+    3. Checar se malloc retorna NULL;
     4. pLast no pList.
 */
 

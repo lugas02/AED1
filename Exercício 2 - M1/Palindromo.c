@@ -1,8 +1,3 @@
-// Lucas Costa Garcia
-// 2022/1 - 22000297 - M1 - ALGORITMOS E ESTRUTURAS DE DADOS I
-// Exercício 2 - M1
-// 
-
 /*
 Fazer um programa que testa se uma sequência de caracteres fornecida pelo usuário é um palíndromo, 
 ou seja, é uma palavra cuja primeira metade é simétrica à segunda metade.

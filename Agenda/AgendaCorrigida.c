@@ -217,7 +217,7 @@ void PrintAll() {
 
 int main() {
     pBuffer = (void *) malloc( sizeof(void *) + (sizeof(char) * 12) );  // Memória para guardar um endereço de um nodo, um char para o menu e 11 chars para a string
-    *(char *)( pBuffer + sizeof(void *) ) = 'a';  // Precaução
+    *(char *)( pBuffer + sizeof(void *) ) = '\0';  // Precaução
     
     printf("Menu: ");
     printf("'n' para nova pessoa, 'p' para retirar um, 'i' para imprimir, 's' para procurar por nome, 'c' para limpar a agenda, 'x' para sair. \n");
